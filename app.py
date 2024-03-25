@@ -23,7 +23,7 @@ pc = Pinecone(api_key='68dda7f6-43ac-4340-8461-56396ae32cd1', environment='gcp-s
 #Pinecone(api_key='68dda7f6-43ac-4340-8461-56396ae32cd1')#'YOUR PINECONE API HERE')
 
 # Load and preprocess the PDF document
-loader = PyPDFLoader('shweta_sharma_brief.pdf') #pdf that need to be read
+loader = PyPDFLoader('blackhole.pdf') #pdf that need to be read
 documents = loader.load()
 
 # Split the documents into smaller chunks for processing
@@ -47,9 +47,9 @@ llm = Replicate(
 prompt_template = """Use the following pieces of context to answer the question at the end.
         If you don't know the answer, please think rationally answer from your own knowledge base
         
-{context}
+please provide correct context document
         
-Question: {question}
+Question: what is blackhole?
 """
 
 PROMPT = PromptTemplate(
